@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -21,6 +21,12 @@ connection.once("open", () => {
 const citiesRouter = require("./routes/cities");
 app.use("/Cities", citiesRouter);
 
-app.listen(port, () => {
-  console.log(`Server is running on port: ${port}`);
-});
+const start = async () => {
+  try {
+    app.listen(port, console.log(`server is listening on port ${port}...`));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+start();

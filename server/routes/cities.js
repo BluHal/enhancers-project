@@ -1,10 +1,6 @@
 const router = require("express").Router();
-let City = require("../models/cities.model");
+const { getAllCitiesInfo } = require("../controllers/citiesInfo");
 
-router.route("/").get((req, res) => {
-  City.find()
-    .then((cities) => res.json(cities))
-    .catch((err) => res.status(400).json(`Error: ${err}`));
-});
+router.route("/").get(getAllCitiesInfo);
 
 module.exports = router;
