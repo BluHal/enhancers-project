@@ -1,0 +1,10 @@
+.gridWrapper {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -19,14 +19,6 @@ connection.once("open", () => {
 });
 
 const citiesRouter = require("./routes/cities");
-app.use("/Cities", citiesRouter);
+app.use("/getCitiesInfo", citiesRouter);
 
-const start = async () => {
-  try {
-    app.listen(port, console.log(`server is listening on port ${port}...`));
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-start();
+app.listen(port, console.log(`server is listening on port ${port}...`));

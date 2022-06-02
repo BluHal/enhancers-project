@@ -6,6 +6,7 @@ const getAllCitiesInfo = async (req, res) => {
   try {
     const cities = await City.find();
     let cityInfos = [];
+
     for (var i = 0; i < cities.length; i++) {
       const cityName = cities[i].name;
 
@@ -22,6 +23,7 @@ const getAllCitiesInfo = async (req, res) => {
         businesses: businesses,
       });
     }
+
     res.json(cityInfos);
   } catch (error) {
     res.status(500).json({
